@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigador</title>
+    {% load static %}
+    <link href="{% static 'home/style.css'%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+  {% include 'home/base.html' %}
+    <div>
+     <form>
+      <p class="fs-1">Digite os dados que você deseja para buscar no PNCP.</p>
+      <div class="input-group flex-nowrap" id="botao">
+        <span class="input-group-text" id="addon-wrapping">Data inicial: </span>
+        <input type="date" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="dt_inicial">
+      </div>
+      <div class="input-group flex-nowrap" id="botao">
+        <span class="input-group-text" id="addon-wrapping">Data final: </span>
+        <input type="date" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="dt_final">
+      </div>
+      <div class="input-group flex-nowrap" id="botao">
+        <span class="input-group-text" id="addon-wrapping">Objeto: </span>
+        <input type="text" class="form-control" placeholder="Digite o Objeto" aria-label="Username" aria-describedby="addon-wrapping" name="objeto">
+      </div>
+      <input type="submit" class="btn btn-primary btn-lg" id="botao" value="Buscar" placeholder="buscar">
+     </form>
+      <a type="button" class="btn btn-danger btn-lg" id="botao" href="{% url 'home' %}">Voltar</a>
+    </div>
+    {% if messages %}
+    <p class="messages">
+        {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %} id="mensagem" >{{ message }}</p>
+        {% endfor %}
+    </p>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

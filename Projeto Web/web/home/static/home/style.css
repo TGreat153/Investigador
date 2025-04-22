@@ -1,0 +1,15 @@
+#cabecalho{
+    background-color: #1a9988 !important;
+    margin-bottom: 10px;
+    display: grid;
+}
+
+#botao{
+    margin: 10px;
+}
+
+.messages{
+    background-color: red;
+    color: white;
+    font-size: xx-large;
+}
