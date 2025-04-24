@@ -8,8 +8,6 @@
     margin: 10px;
 }
 
-.messages{
-    background-color: red;
-    color: white;
-    font-size: xx-large;
+#graficos{
+    display: inline-block;
 }

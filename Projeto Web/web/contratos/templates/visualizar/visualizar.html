@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    {% load static %}
+    <link href="{% static 'home/style.css'%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+  {% include 'home/base.html' %}
+    <div id="botoes">
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Buscar</span>
+            <input type="text" class="form-control" placeholder="Digite o nome ou numero da empresa aria-label="Username" aria-describedby="addon-wrapping">
+            <a type="button" class="btn btn-primary btn-lg">Buscar</a>
+        </div>
+        <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">Nome da empresa</th>
+                  <th scope="col">Data de inicio</th>
+                  <th scope="col">Data de Fim</th>
+                  <th scope="col">Vigencia</th>
+                  <th scope="col">Saldo Total</th>
+                  <th scope="col">Valor mensal</th>
+                </tr>
+              </thead>
+            </table>
+            <div id="graficos">
+                <canvas id="graf_barra" style="width:100%;max-width:600px"></canvas>
+                <canvas id="graf_linha" style="width:100%;max-width:600px"></canvas>
+                <canvas id="pizza" style="width:100%;max-width:600px"></canvas>
+            </div>
+            <a type="button" class="btn btn-danger btn-lg" href="{% url 'contratos' %}">Voltar</a>
+          </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="{% static 'home/script_grafico.js'%}"></script>
+</body>
+</html>
